@@ -11,7 +11,7 @@ for passphrase in passphrases:
         passwords_sorted = set()
         for password in passwords:
             passwords_sorted.add(''.join(sorted(password)))
-        if len(passwords) == len(set(passwords_sorted)):
+        if len(passwords) == len(passwords_sorted):
             valid_2 += 1
 
 #Part 1
