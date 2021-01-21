@@ -5,9 +5,9 @@ with open('./06.txt') as myinput:
 
 memory_banks = [int(memory_bank) for memory_bank in memory_banks]
 
-states = {True}
+states = set()
 counter, seen_state_cycle = 0, 0
-while states:
+while True:
     position = memory_banks.index(max(memory_banks))
     blocks = memory_banks[position]
     memory_banks[position] = 0
@@ -20,8 +20,8 @@ while states:
             seen_state_cycle = counter + 1
             states = {configuration}
         else:
-            counter -= seen_state_cycle
-            states = set()
+            counter -= seen_state_cycle - 1
+            break
     else:
         states.add(configuration)
     counter += 1
