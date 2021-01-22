@@ -18,12 +18,14 @@ while True:
         position += 1
         memory_banks[position % len(memory_banks)] += 1
     configuration = tuple(memory_banks)
-    if configuration in states_set:
-        #Part 1
-        print(counter)
-        #Part 2
-        print(counter - states.index(configuration))
-        break
-    else:
+    if configuration not in states_set:
         states.append(configuration)
-        states_set.add(configuration)
+        states_set.add(configuration)        
+    else:        
+        #Part 1        
+        print(counter)
+        
+        #Part 2        
+        print(counter - states.index(configuration))
+        
+        break
