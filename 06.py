@@ -21,7 +21,7 @@ while True:
     if configuration not in states_set:
         states.append(configuration)
         states_set.add(configuration)
-    else:        
+    else:
         #Part 1
         print(counter)
         #Part 2
